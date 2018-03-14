@@ -1,0 +1,155 @@
+
+body
+  margin: 0;
+  padding: 0;
+  min-width 1390px
+  .header
+    width: 100%;
+    height: 80px;
+    background: #e0e0e0;
+    border-bottom solid 1px #aaa
+    .header-wrap
+      width 84%
+      height 100%
+      background #fff
+      margin 0 auto
+      .header1
+        float left
+        background #fff
+        height 100%
+        display flex
+        justify-content center
+        align-items center
+      .header2
+        float left
+        height 80px
+        line-height 80px
+        background #fff
+        margin-left 70px
+        a
+          font-size 18px
+          :nth-child(2)
+            color #000
+            font-weight 900
+          :nth-child(3)
+            color #000
+            font-weight 900
+            &:hover
+              color red
+      .header-nav
+        float right
+        >ul
+         >li
+           float left
+           margin auto 18px
+           height 80px
+           line-height 80px
+           a
+            font-size 18px
+            font-weight 900
+            color black
+            &.on
+              color red
+         :nth-child(7)
+           a
+            padding 5px
+            background red
+            border-radius 5px
+            color #fff
+
+  .content
+    width 100%
+    height auto
+    background pink
+    .content-nav-wrap
+      position relative
+      width 100%
+      height 420px
+      margin 0 auto
+      background #8cf8ff
+      .img-wrap
+        display flex
+        justify-content center
+
+      .item-ul-wrap
+        width 84%
+        position absolute
+        top 0
+        left 50%
+        transform translateX(-50%)
+        .item-ul
+          position absolute
+          top 0
+          left 20px
+          width 160px
+          height 420px
+          display flex
+          flex-direction row-reverse
+          justify-content space-around
+          flex-wrap wrap
+          align-items center
+          background #757881
+          li
+            width 160px
+            height 10%
+            display flex
+            align-items center
+            justify-content center
+            &.on
+              background #50535c
+              a
+                i
+                  opacity 0
+            a
+              color #fff
+              font-weight 800
+              font-size 16px
+
+
+        .item-ul2
+          display none
+          position absolute
+          top 0
+          left 160px
+          width 160px
+          height 420px
+          align-items center
+          background rgba(200,200,200,.5)
+          li
+            width 160px
+            height 10%
+            display flex
+            align-items center
+            justify-content center
+            a
+              color #505050
+              background rgba(200,200,200,.5)
+              font-weight 800
+              font-size 16px
+              &.on1
+                color  red
+
+
+  .content1-wrap
+    width 100%
+    .content1
+      width 84%
+      background #8cf8ff
+      margin 0 auto
+      h2
+        width 120px
+        margin 0 auto
+        font-size 28px
+        font-weight 700
+      .content1-nav
+        width 100%
+        ul
+          width 560px
+          height 50px
+          display flex
+          justify-content space-between
+          margin 0 auto
+  .footer
+    width 100%
+    height auto
+    background #ffd6ca

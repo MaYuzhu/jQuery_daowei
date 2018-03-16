@@ -27,7 +27,7 @@ $(function () {
 
 	//头部动
 	$(document).scroll(function () {
-		//console.log($(window).scrollTop())
+		console.log($(window).scrollTop())
 		if($(window).scrollTop()>80){
 			$('.header').prop('class','header showhead')
 		}else{
@@ -35,8 +35,6 @@ $(function () {
 		}
 
 	});
-  $('.header').on('click',function () {
-	  $('.header').slideUp();
-  })
+
 
 })

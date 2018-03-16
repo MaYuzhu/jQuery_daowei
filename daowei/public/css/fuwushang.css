@@ -6,8 +6,17 @@ body {
 body .header {
   width: 100%;
   height: 80px;
-  background: rgba(250,250,250,0.5);
+  background: rgba(250,250,250,0.7);
   border-bottom: solid 1px #aaa;
+  box-shadow: 0 0 8px 0px #7e8c8d;
+}
+body .header.showhead {
+  position: fixed;
+  z-index: 50;
+  top: 0;
+/*transition transform 0.5s*/
+  transform: translateY(0);
+  animation: aa 0.5s;
 }
 body .header .header-wrap {
   width: 84%;
@@ -66,6 +75,38 @@ body .header .header-wrap .header-nav >ul :nth-child(7) a {
   background: #f00;
   border-radius: 5px;
   color: #fff;
+}
+@-moz-keyframes aa {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@-webkit-keyframes aa {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@-o-keyframes aa {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes aa {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 body .content {
   width: 100%;

@@ -1,0 +1,364 @@
+body
+  margin: 0;
+  padding: 0;
+  min-width 1390px
+  .header
+    width: 100%;
+    height: 80px;
+    background: rgba(250,250,250,.7);
+    border-bottom solid 1px #aaa
+    z-index 50
+    top 0
+
+    &.showhead
+      position fixed
+      z-index 50
+      top 0
+      /*transition transform 0.5s*/
+      transform translateY(0)
+      animation aa 0.5s
+      box-shadow 0 0 8px 0 #7e8c8d
+    @keyframes aa{
+      0% {transform: translateY(-100%)}
+      100% {transform: translateY(0)}
+    }
+    .header-wrap
+      width 84%
+      height 100%
+      background rgba(250,250,250,.5)
+      margin 0 auto
+      .header1
+        float left
+        height 100%
+        display flex
+        justify-content center
+        align-items center
+      .header2
+        float left
+        height 80px
+        line-height 80px
+        margin-left 70px
+        a
+          font-size 18px
+          :nth-child(2)
+            color #000
+            font-weight 900
+          :nth-child(3)
+            color #000
+            font-weight 900
+            &:hover
+              color red
+      .header-nav
+        float right
+        >ul
+          >li
+            float left
+            margin auto 18px
+            height 80px
+            line-height 80px
+            a
+              font-size 18px
+              font-weight 900
+              color black
+              &.on
+                color red
+          :nth-child(7)
+            a
+              padding 5px
+              background red
+              border-radius 5px
+              color #fff
+
+
+
+
+  .content
+    background #fbf8f8
+    overflow hidden
+    margin-top 10px
+    .content1
+      width 84%
+      overflow hidden
+      margin 14px auto 0
+      .content1-left
+        width 68%
+        float left
+        padding 50px 10px 30px
+        >p:nth-child(1)
+          font-size 36px
+          font-weight 800
+          float left
+          margin  30px auto 0 20px
+        >p:nth-child(2)
+          float left
+          margin  50px auto 0 10px
+          color #7e8c8d
+          >span
+            color black
+        >p:nth-child(3)
+          float left
+          margin  50px auto 0 10px
+          color #7e8c8d
+          >span
+            color red
+      .content1-right
+        width 30%
+        float right
+        margin-top 70px
+        li
+          float left
+          width 100px
+          text-align center
+          margin 5px 0
+          span
+            display block
+            text-align center
+            margin 5px 0
+            color red
+          em
+            display block
+            font-style normal
+            transform translate(53px,-24px)
+            color #adbbbc
+    .content2
+      width 100%
+      height 40px
+      background #323434
+      .content2-ul
+        width 84%
+        margin 0 auto
+        li
+          width 160px
+          height 40px
+          float left
+          font-size 18px
+          font-weight 700
+          text-align center
+          a
+            color #ffffff
+          line-height 40px
+          &.on
+            background #6e6e6e
+
+    .content3
+      width 84%
+      margin 20px auto
+      overflow hidden
+      .c3-left
+        width 960px
+        background #fbf8f8
+        float left
+        >:nth-child(1)
+          overflow hidden
+          background white
+          >p
+            height 60px
+            line-height 60px
+            border-bottom solid 1px #aaaaaa
+            margin-left 20px
+            i
+              font-style normal
+              border-bottom 5px solid red
+              padding 16px 0
+          .c3-left-1
+            width 960px
+            img
+              width 150px
+              margin 25px
+              float left
+            >div
+              float left
+              >:nth-child(1)
+                font-size 20px
+                margin 40px 0 30px
+              >:nth-child(2)
+                width 260px
+                font-size 16px
+                margin 10px 0
+                overflow hidden
+                text-overflow ellipsis
+                white-space nowrap
+              >:nth-child(3)
+                margin 40px 0 10px
+                >:nth-child(1)
+                  font-size 28px
+                  font-weight 800
+                  color red
+                >:nth-child(2)
+                  color red
+                >:nth-child(3)
+                  text-decoration line-through
+                  color #999
+                >:nth-child(4)
+                  margin-left 300px
+                  color #aaa
+                  i
+                    font-style normal
+
+
+        >:nth-child(2)
+          overflow hidden
+          margin 80px auto 50px
+          background #ffffff
+          padding-bottom 30px
+          >:nth-child(1)
+            height 60px
+            line-height 60px
+            border-bottom solid 1px #aaaaaa
+            margin-left 20px
+            i
+              font-style normal
+              border-bottom 5px solid red
+              padding 16px 0
+          >:nth-child(2)
+            margin 10px 20px
+            span
+              font-size 24px
+          >:nth-child(3)
+            line-height 30px
+            margin 10px 20px
+
+        >:nth-child(3)
+          overflow hidden
+          margin 80px auto 50px
+          background #ffffff
+          padding 0 20px 30px
+          >:nth-child(1)
+            height 60px
+            line-height 60px
+            border-bottom solid 1px #aaaaaa
+            i
+              font-style normal
+              border-bottom 5px solid red
+              padding 16px 0
+            span
+              color #7d7d7d
+              font-size 14px
+          >ul
+            li
+              border-bottom  1px solid #afafaf
+              overflow hidden
+              padding 20px 0
+              .user-img
+                float left
+                width 40px
+                height 40px
+                border-radius 8px
+                background url('../img/jiazheng/132 (2).jpg') no-repeat
+                background-size 100%
+
+              .user
+                float left
+                margin-left 30px
+                p
+                  font-size 14px
+                  color #3b3b3b
+                  line-height 28px
+                  >img
+                    width 10px
+                >:nth-child(4)
+                  font-size 14px
+                  color #929292
+          >.page
+            background white
+            text-align center
+            margin-top 20px
+            a
+              display inline-block
+              text-align center
+              line-height 30px
+              width 30px
+              height 30px
+              border 1px solid #aaa
+              &:hover
+                background red
+                color white
+                transition .5s
+              &:first-child,&:last-child
+                width 90px
+              &.on
+                background red
+                color white
+                transition .5s
+      .c3-right
+        float right
+        margin-right  80px
+        .c3-right-top
+          width 230px
+          height 292px
+          background url('../img/jiazheng/fuwushang2_07.jpg') no-repeat
+          display flex
+          justify-content center
+          align-items center
+          img
+            margin-top -55px
+        .c3-right-bottom
+          width 230px
+          height 292px
+          margin-top 20px
+          background url('../img/jiazheng/fuwushang2_10.jpg') no-repeat
+          display flex
+          justify-content center
+          align-items center
+          img
+            width 115px
+            height 115px
+            margin-top -55px
+
+
+  .footer
+    width 100%
+    height auto
+    background #fff
+    .footer-top
+      width 100%
+      overflow hidden
+      h2
+        font-size 30px
+        font-weight 800
+        width 180px
+        margin 80px auto 20px
+        span
+          color red
+          font-weight 800
+      >:nth-child(2)
+        width 420px
+        margin 10px auto
+        font-size 20px
+      >ul
+        width 400px
+        height 30px
+        margin 20px auto
+        >li
+          float left
+          font-size 18px
+          margin 0 20px
+          img
+            vertical-align top
+      .city
+        width 84%
+        margin 0 auto
+        .city-left
+          padding 10px 0
+          float left
+          width 100px
+          height 200px
+          font-size 20px
+          font-weight 800
+        ul
+          float left
+          display flex
+          flex-wrap wrap
+          margin-left 30px
+          li
+            width 9.090909%
+            margin 10px 0
+            text-align center
+    >p
+      padding  20px 0 20px
+      color #aaaaaa
+      background #FBF8F8
+      >span
+        display block
+        width 84%
+        margin 0 auto

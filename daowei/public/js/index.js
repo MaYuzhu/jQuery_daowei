@@ -1,12 +1,24 @@
 $(function () {
 	//头部导航字体移入变红
   $('.header-nav>ul>li>a').hover(function () {
-  	this.style.transition = 0.3 + 's'
-    this.className = 'on'
-  },function () {
-	  this.className = ''
+		this.style.transition = 0.3 + 's'
+		$(this).addClass('on')
+	},function () {
+		$(this).removeClass('on')
+	})
 
-  })
+	//头部导航点击变红
+	var index = $('.header-nav>ul>li>a').index($('.on1'))
+	$('.header-nav>ul>li').on('click',function () {
+
+		var clickIndex = $(this).index()
+		if(clickIndex != index){
+			$('.header-nav>ul>li>a')[index].classList.remove('on1')
+			$('.header-nav>ul>li>a')[clickIndex].classList.add('on1')
+			index = clickIndex
+		}
+	})
+
 
 	//轮播左侧导航ul移入改变
 	$('.item-ul-wrap>.item-ul>li').hover(function () {
@@ -27,7 +39,7 @@ $(function () {
 
 	//头部动
 	$(document).scroll(function () {
-		console.log($(window).scrollTop())
+		//console.log($(window).scrollTop())
 		if($(window).scrollTop()>80){
 			$('.header').prop('class','header showhead')
 		}else{

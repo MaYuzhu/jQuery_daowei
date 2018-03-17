@@ -23,9 +23,9 @@
 		</div>
 		<div class="header-nav">
 			<ul class="nav-ul">
-				<li><a href="#" class="on">首页</a></li>
+				<li><a href="/index.html" class="on1">首页</a></li>
 				<li><a href="#">到位APP</a></li>
-				<li><a href="#">服务商</a></li>
+				<li><a href="/fuwushang.html">服务商</a></li>
 				<li><a href="#">商家入驻</a></li>
 				<li><a href="#">风物APP</a></li>
 				<li><a href="#">关于我们</a></li>
@@ -174,7 +174,12 @@
 			</ul>
 		</div>
 	</div>
-	<div class="content1-wrap">
+
+
+	<div class="aa"></div>
+
+
+	<!--<div class="content1-wrap">
 		<div class="content1">
 			<h2>家庭保洁</h2>
 			<div class="content1-nav">
@@ -252,16 +257,10 @@
 			</div>
 
 		</div>
-	</div>
-	<div>3</div>
-	<div>4</div>
-	<div>5</div>
-	<div>6</div>
-	<div>7</div>
-	<div>8</div>
-	<div>9</div>
-	<div>10</div>
+	</div>-->
+
 </div>
+
 <footer class="footer">
 	<div class="footer-top">
 		<h2>到位<span>服务</span>保障</h2>
@@ -338,7 +337,43 @@
 
 
 <script id="temp01" type="text/html">
+	{{each data.list}}
+	<div class="content1-wrap">
+		<div class="content1">
+			<h2>{{$value.serviceIndex}}</h2>
+			<div class="content1-nav">
+				<ul>
+					{{each $value.serviceType}}
+					<li><a href="#">{{$value}}</a></li>
+					{{/each}}
+					<!--<li><a href="#">开荒保洁</a></li>
+					<li><a href="#">擦玻璃</a></li>
+					<li><a href="#">深度保洁</a></li>
+					<li><a href="#">杀虫除螨</a></li>
+					<li><a href="#">家居养护</a></li>-->
+				</ul>
+				<a href="javascript:" class="content1-right">更多服务<i class="iconfont icon-jiantou1"></i></a>
+			</div>
 
+			<div class="content1-img-wrap">
+				{{each $value.shopList}}
+				<div class="content1-img">
+					<a href="#">
+						<div><img src={{$value.imgUrl}} alt="a"></div>
+						<p>{{$value.serviceName}}</p>
+						<div>{{$value.description}}</div>
+						<div>
+							<p>{{$value.price}}元/小时</p>
+							<p>查看详情</p>
+						</div>
+					</a>
+				</div>
+				{{/each}}
+			</div>
+
+		</div>
+	</div>
+	{{/each}}
 </script>
 
 
@@ -349,7 +384,6 @@
 <script>
 
 	var mySwiper = new Swiper ('.swiper-container', {
-
 		loop: true,
 
 		// 如果需要分页器
@@ -360,5 +394,10 @@
 	})
 </script>
 <script type="text/javascript" src="./js/template-web.js"></script>
+<script type="text/javascript">
+  $.get('/getShop',function (data) {
+	  $(".aa").append(template("temp01",{data:data}))
+  })
+</script>
 </body>
 </html>

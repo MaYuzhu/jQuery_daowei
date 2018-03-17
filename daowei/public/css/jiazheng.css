@@ -70,6 +70,9 @@ body .header .header-wrap .header-nav >ul >li a {
 body .header .header-wrap .header-nav >ul >li a.on {
   color: #f00;
 }
+body .header .header-wrap .header-nav >ul >li a.on1 {
+  color: #f00;
+}
 body .header .header-wrap .header-nav >ul :nth-child(7) a {
   padding: 5px;
   background: #f00;
@@ -319,12 +322,18 @@ body .content .content3 .c3-left >:nth-child(3) >ul li .user-img {
   width: 40px;
   height: 40px;
   border-radius: 8px;
-  background: url("../img/jiazheng/132 (2).jpg") no-repeat;
-  background-size: 100%;
+/*background url({{$value.iconUrl}}) no-repeat
+                background-size 100%*/
+}
+body .content .content3 .c3-left >:nth-child(3) >ul li .user-img img {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
 }
 body .content .content3 .c3-left >:nth-child(3) >ul li .user {
   float: left;
   margin-left: 30px;
+  width: 85%;
 }
 body .content .content3 .c3-left >:nth-child(3) >ul li .user p {
   font-size: 14px;

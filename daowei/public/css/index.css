@@ -105,6 +105,9 @@ body .header .header-wrap .header-nav >ul >li a {
 body .header .header-wrap .header-nav >ul >li a.on {
   color: #f00;
 }
+body .header .header-wrap .header-nav >ul >li a.on1 {
+  color: #f00;
+}
 body .header .header-wrap .header-nav >ul :nth-child(7) a {
   padding: 5px;
   background: #f00;
@@ -114,7 +117,6 @@ body .header .header-wrap .header-nav >ul :nth-child(7) a {
 body .content {
   width: 100%;
   height: auto;
-/*margin-top 80px*/
 }
 body .content .content-nav-wrap {
   position: relative;
@@ -229,9 +231,12 @@ body .content .content-nav-wrap .item-ul-wrap .item-ul2 li a.on1 {
 body .content1-wrap {
   width: 100%;
 }
+body .content1-wrap:nth-child(even) {
+  background: #fbf8f8;
+}
 body .content1-wrap .content1 {
   width: 84%;
-  background: #fbf8f8;
+/*background #FBF8F8*/
   margin: 0 auto;
   padding: 50px 10px 20px;
 }
@@ -246,13 +251,16 @@ body .content1-wrap .content1 .content1-nav {
   position: relative;
 }
 body .content1-wrap .content1 .content1-nav ul {
-  width: 560px;
+  width: auto;
   height: 50px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin: 14px auto;
   font-size: 22px;
   font-weight: 100;
+}
+body .content1-wrap .content1 .content1-nav ul li {
+  margin: 3px 10px;
 }
 body .content1-wrap .content1 .content1-nav .content1-right {
   position: absolute;
@@ -306,7 +314,7 @@ body .content1-wrap .content1 .content1-img-wrap .content1-img >a img {
 body .footer {
   width: 100%;
   height: auto;
-  background: #fbf8f8;
+/*background #FBF8F8*/
 }
 body .footer .footer-top {
   width: 100%;
@@ -364,8 +372,11 @@ body .footer .footer-top .city ul li {
   text-align: center;
 }
 body .footer .footer-bottom {
-  width: 84%;
+  width: 100%;
   margin: 0 auto;
+  padding: 20px 8%;
+  background: #fbf8f8;
+  box-sizing: border-box;
 }
 body .footer .footer-bottom .foot-he {
   font-weight: 800;

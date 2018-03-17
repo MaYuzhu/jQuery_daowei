@@ -21,9 +21,9 @@
 		</div>
 		<div class="header-nav">
 			<ul class="nav-ul">
-				<li><a href="#" class="on">首页</a></li>
+				<li><a href="/index.html">首页</a></li>
 				<li><a href="#">到位APP</a></li>
-				<li><a href="#">服务商</a></li>
+				<li><a href="/fuwushang.html" class="on1">服务商</a></li>
 				<li><a href="#">商家入驻</a></li>
 				<li><a href="#">风物APP</a></li>
 				<li><a href="#">关于我们</a></li>
@@ -36,7 +36,13 @@
 		<div class="wrap">
 			<p>服务商</p>
 			<div class="content-left">
-				<ul>
+
+				<div class="list"></div>
+				<div class="button">查看更多商家
+					<img src="img/fuwushang/fuwu_down2.jpg" alt="">
+				</div>
+
+				<!--<ul>
 					<li>
 						<a href="#">
 							<div>
@@ -182,7 +188,7 @@
 						</a>
 					</li>
 
-				</ul>
+				</ul>-->
 			</div>
 			<div class="content-right">
 				<img src="img/fuwushang/tuijianfuwushang_03.jpg" alt="">
@@ -247,7 +253,36 @@
 			<span>©2015 版权所有 到位 daoway.com 京ICP备15001471号-1 北京邻家科技有限公司</span>
 		</p>
 	</div>
+
+
+
+<script id="temp02" type="text/html">
+	<ul>
+		{{each data.list}}
+		<li>
+			<a href="/jiazheng.html" target="_blank">
+				<div>
+					<img src={{$value.imgUrl}} alt="">
+					<p><img src='img/fuwushang/home1.png' alt="">&nbsp;{{$value.title}}</p>
+					<p>
+						<span>已接单<i>{{$value.orderCount}}</i>单</span>
+						<span>好评<i>{{$value.positiveRate}}</i></span>
+					</p>
+				</div>
+			</a>
+		</li>
+		{{/each}}
+	</ul>
+</script>
+
 </body>
 <script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/template-web.js"></script>
+<script type="text/javascript">
+	$.get('/getFuwu',function (data) {
+		$('.list').append(template('temp02',{data:data}))
+	})
+
+</script>
 </html>

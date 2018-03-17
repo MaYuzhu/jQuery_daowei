@@ -70,6 +70,9 @@ body .header .header-wrap .header-nav >ul >li a {
 body .header .header-wrap .header-nav >ul >li a.on {
   color: #f00;
 }
+body .header .header-wrap .header-nav >ul >li a.on1 {
+  color: #f00;
+}
 body .header .header-wrap .header-nav >ul :nth-child(7) a {
   padding: 5px;
   background: #f00;
@@ -171,6 +174,20 @@ body .content .wrap .content-left ul >li >a >div >p:nth-child(3) >span:last-chil
 body .content .wrap .content-left ul >li >a >div >p:nth-child(3) i {
   font-size: 12px;
   font-style: normal;
+}
+body .content .wrap .content-left .button {
+  width: 200px;
+  height: 50px;
+  border: 1px solid #888;
+  color: #7b7b7b;
+  background: #fff;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 50px;
+  margin: 30px auto;
+}
+body .content .wrap .content-left .button:hover {
+  cursor: pointer;
 }
 body .content .wrap .content-right {
   float: left;

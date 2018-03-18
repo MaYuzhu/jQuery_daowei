@@ -209,6 +209,7 @@
 		})
 
 		var page = 1
+
 		$.get('/getComments?page=' + page,function (data) {
 			$('.comment').html(template('temp04',{data1:data}))
 		})
@@ -216,24 +217,28 @@
 			var initIndex = 0
 			$('.page>a').on('click',function () {
 				var index = $(this).index()
+				var aa = $('.page>a').index($('.page>.on'))
+				console.log(aa)
 				page = index+1
 				$.get('/getComments?page=' + page, function (data) {
 					$('.comment').html(template('temp04',{data1:data}))
 				})
-				if(index-1 != initIndex){
-					if(page>1){
-						$('.page>a')[page-1].classList.remove('on')
-					}
+				if(page != initIndex){
 
-					$('.page>a')[initIndex].classList.remove('on')
+					//$('.page>a')[initIndex].classList.remove('on')
 					$('.page>a')[index-1].classList.add('on')
 					initIndex = index-1
+					if(aa!=-1){
+						$('.page>a')[aa].classList.remove('on')
+						console.log(aa)
+					}
 				}
 			})
 			//上一页 下一页
 			$('.prev').on('click',function () {
 				if(page<=1){
 					alert('已经是第一页')
+					page = 1
 					return
 				}
 				if(page>1){
@@ -241,25 +246,32 @@
 					$.get('/getComments?page=' + page, function (data) {
 						$('.comment').html(template('temp04',{data1:data}))
 					})
-					$('.page>a')[page].classList.remove('on')
+					var aa = $('.page>a').index($('.page>.on'))
+					if(aa!=-1){
+						$('.page>a')[aa].classList.remove('on')
+					}
+					//$('.page>a')[page].classList.remove('on')
 					$('.page>a')[page-1].classList.add('on')
 				}
-
 				//console.log('上'+page)
 			})
 			$('.next').on('click',function () {
-				if(page>=8){
+				if(page>8){
 					alert('已经是最后一页')
+					page = 8
 					return
 				}
-				console.log('=='+page)
 				page++
 				$.get('/getComments?page=' + page, function (data) {
 					$('.comment').html(template('temp04',{data1:data}))
 				})
-				$('.page>a')[page-2].classList.remove('on')
-				$('.page>a')[page-1].classList.add('on')
-				console.log('---'+page)
+				var aa = $('.page>a').index($('.page>.on'))
+				if(aa!=-1){
+					$('.page>a')[aa].classList.remove('on')
+				}
+				//$('.page>a')[page-2].classList.remove('on')
+				//$('.page>a')[page-1].classList.add('on')
+				$('.page>a')[aa+1].classList.add('on')
 				//console.log('下'+page)
 			})
 		},100)

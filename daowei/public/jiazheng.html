@@ -6,8 +6,8 @@
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/jiazheng.css">
 </head>
-<body>
-<header class="header">
+<body style="min-width: 1390px">
+<header class="header" style="min-width: 1390px">
 	<div class="header-wrap">
 		<div class="header1">
 			<img src="img/one/logo@2x.png" alt="qqq">
@@ -33,10 +33,8 @@
 	</div>
 </header>
 
-<div class="tem-module">
-
-</div>
-
+<div class="tem-module"></div>
+<!--<div class="comment"></div>-->
 
 <div class="footer">
 	<div class="footer-top">
@@ -102,7 +100,7 @@
 				<p>最近可预约时间：<span>03月16日 11:30</span></p>
 			</div>
 			<ul class="content1-right">
-				<li><span>{{$value.count}}</span>成功接单 <em>|</em></li>
+				<li><span>{{$value.orderCount}}</span>成功接单 <em>|</em></li>
 				<li><span>{{$value.accept}}</span>接单率 <em>|</em></li>
 				<li><span>{{$value.praise}}</span>好评率</li>
 			</ul>
@@ -117,7 +115,7 @@
 		<div class="content3">
 			<div class="c3-left">
 				<div>
-					<p> <i>服务项目{{$value.imgUrl}}</i></p>
+					<p> <i>服务项目</i></p>
 					<div class="c3-left-1">
 						<img src={{$value.imgUrl}} alt="a">
 						<div>
@@ -127,7 +125,7 @@
 								<span>{{$value.price}}</span>
 								<span>元/小时</span>
 								<b>原价 <span>{{$value.oldPrice}}</span>元</b>
-								<span>已售 <i>{{$value.commentCount}}</i></span>
+								<span>已售 <i>{{$value.soldCount}}</i></span>
 							</p>
 						</div>
 
@@ -142,36 +140,23 @@
 					<p>云家政是家政服务在线预订平台。我们的目标是让每个家庭都能获得诚信、便捷、有保障的家政服务。云家政拥有国内最大的实名认证家庭服务员数据库，目前平台上有超过100000名专业服务人员；数百个家政服务商，遍布全国主要城市各个社区。 云家政倡导简单、轻松的生活方式。通过把分散的家政服务能力汇集和分配，让中国家庭获得诚信、便捷、有保障的家政服务，解决日常生活中的麻烦事，把更多时间留给自己和家人，提高生活品质。</p>
 				</div>
 				<div>
-					<p> <i>用户评论</i> <span>&nbsp;({{1}}条评论)</span></p>
+					<p> <i>用户评论</i> <span>&nbsp;({{$value.commentCount}}条评论)</span></p>
 					<ul>
-						{{each $value.comments}}
-						<li>
-							<div class="user-img">
-								<img src={{$value.iconUrl}} alt="">
-							</div>
-
-							<div class="user">
-								<p>{{$value.nick}}</p>
-								<p>
-									<img src="img/jiazheng/red_star.png" alt="">
-									<img src="img/jiazheng/red_star.png" alt="">
-									<span>2018-03-15</span>
-								</p>
-								<p>{{$value.comment}}</p>
-								<p>
-									<img src="img/jiazheng/citypoint.png" alt="">
-									<span>{{$value.city}}&nbsp;{{$value.area}}</span>
-								</p>
-							</div>
-						</li>
-						{{/each}}
+						<div class="comment"></div>
 					</ul>
 					<div class="page">
-						<a href="#" style="color: black;background: white">&lt;上一页</a>
-						<a href="#" class="on">1</a>
-						<a href="#">2</a>
-						<a href="#">3</a>
-						<a href="#" style="color: black;background: white">下一页&gt;</a>
+						<span class="prev" style="color: black;background: white">&lt;上一页</span>
+						<a href="javascript:;" class="on">1</a>
+						<a href="javascript:;">2</a>
+						<a href="javascript:;">3</a>
+						<a href="javascript:;">4</a>
+						<a href="javascript:;">5</a>
+						<a href="javascript:;">6</a>
+						<a href="javascript:;">7</a>
+						<a href="javascript:;">8</a>
+
+						<span>...</span>
+						<spen style="color: black;background: white" class="next">下一页&gt;</spen>
 					</div>
 				</div>
 			</div>
@@ -188,13 +173,102 @@
 	{{/each}}
 </script>
 
+<script id="temp04" type="text/html">
+	{{each data1.list}}
+	<li>
+		<div class="user-img">
+			<img src={{$value.iconUrl}} alt="">
+		</div>
+
+		<div class="user">
+			<p>{{$value.nick}}</p>
+			<p>
+				<img src="img/jiazheng/red_star.png" alt="">
+				<img src="img/jiazheng/red_star.png" alt="">
+				<span>{{$value.createtime}}</span>
+			</p>
+			<p>{{$value.comment}}</p>
+			<p>
+				<img src="img/jiazheng/citypoint.png" alt="">
+				<span>{{$value.city}}&nbsp;{{$value.area}}</span>
+			</p>
+		</div>
+	</li>
+	{{/each}}
+</script>
+
 </body>
 <script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
 <script type="text/javascript" src="js/template-web.js"></script>
 <script type="text/javascript">
-  $.get('/getJia',function (data) {
-    $('.tem-module').append(template('temp03',{data:data}))
-  })
+
+	window.onload = function () {
+		$.get('/getJia',function (data) {
+			$('.tem-module').append(template('temp03',{data:data}))
+		})
+
+		var page = 1
+		$.get('/getComments?page=' + page,function (data) {
+			$('.comment').html(template('temp04',{data1:data}))
+		})
+		setTimeout(function () {
+			var initIndex = 0
+			$('.page>a').on('click',function () {
+				var index = $(this).index()
+				page = index+1
+				$.get('/getComments?page=' + page, function (data) {
+					$('.comment').html(template('temp04',{data1:data}))
+				})
+				if(index-1 != initIndex){
+					if(page>1){
+						$('.page>a')[page-1].classList.remove('on')
+					}
+
+					$('.page>a')[initIndex].classList.remove('on')
+					$('.page>a')[index-1].classList.add('on')
+					initIndex = index-1
+				}
+			})
+			//上一页 下一页
+			$('.prev').on('click',function () {
+				if(page<=1){
+					alert('已经是第一页')
+					return
+				}
+				if(page>1){
+					page--
+					$.get('/getComments?page=' + page, function (data) {
+						$('.comment').html(template('temp04',{data1:data}))
+					})
+					$('.page>a')[page].classList.remove('on')
+					$('.page>a')[page-1].classList.add('on')
+				}
+
+				//console.log('上'+page)
+			})
+			$('.next').on('click',function () {
+				if(page>=8){
+					alert('已经是最后一页')
+					return
+				}
+				console.log('=='+page)
+				page++
+				$.get('/getComments?page=' + page, function (data) {
+					$('.comment').html(template('temp04',{data1:data}))
+				})
+				$('.page>a')[page-2].classList.remove('on')
+				$('.page>a')[page-1].classList.add('on')
+				console.log('---'+page)
+				//console.log('下'+page)
+			})
+		},100)
+	}
+
+
+
+
+
+
 </script>
 </html>

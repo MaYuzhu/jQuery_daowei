@@ -270,6 +270,13 @@ body
             background white
             text-align center
             margin-top 20px
+            .prev,.next
+              display inline-block
+              width 90px
+              height 30px
+              border 1px solid #aaa
+              line-height 30px
+              cursor pointer
             a
               display inline-block
               text-align center
@@ -281,8 +288,7 @@ body
                 background red
                 color white
                 transition .5s
-              &:first-child,&:last-child
-                width 90px
+
               &.on
                 background red
                 color white

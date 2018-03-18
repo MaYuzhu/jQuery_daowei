@@ -352,6 +352,15 @@ body .content .content3 .c3-left >:nth-child(3) >.page {
   text-align: center;
   margin-top: 20px;
 }
+body .content .content3 .c3-left >:nth-child(3) >.page .prev,
+body .content .content3 .c3-left >:nth-child(3) >.page .next {
+  display: inline-block;
+  width: 90px;
+  height: 30px;
+  border: 1px solid #aaa;
+  line-height: 30px;
+  cursor: pointer;
+}
 body .content .content3 .c3-left >:nth-child(3) >.page a {
   display: inline-block;
   text-align: center;
@@ -364,10 +373,6 @@ body .content .content3 .c3-left >:nth-child(3) >.page a:hover {
   background: #f00;
   color: #fff;
   transition: 0.5s;
-}
-body .content .content3 .c3-left >:nth-child(3) >.page a:first-child,
-body .content .content3 .c3-left >:nth-child(3) >.page a:last-child {
-  width: 90px;
 }
 body .content .content3 .c3-left >:nth-child(3) >.page a.on {
   background: #f00;
